@@ -49,8 +49,15 @@ const orderSchema = new mongoose.Schema({
          type: [orderItemsSchema]
     },
     addreas:{
-        type:[addreasSchema]
+        type:[addreasSchema],
+        required:true
+    },
+    status:{
+        type: String,
+        enum: ['PENDING', 'DELIVERED', 'CANCELLED'],
+        default:'PENDING',
     }
+
 }, {timestamps:true})
 
 export const Order = mongoose.model('Order', orderSchema)
