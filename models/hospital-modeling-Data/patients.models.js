@@ -26,6 +26,10 @@ const patientsSchema = new mongoose.Schema({
         type:String,
         enum:["Male", "Female", "Shemale","Other"],
         required:true
+    },
+    admitHospital:{
+        type: mongoose.Schema.Types.ObjectId,
+        ref:"Hospital"
     }
 
 }, {timestamps:true})
