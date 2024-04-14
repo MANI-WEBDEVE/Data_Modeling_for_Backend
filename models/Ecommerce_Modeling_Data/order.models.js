@@ -1,5 +1,6 @@
 import mongoose from 'mongoose'
 
+// Product order item track schema model
 const orderItemsSchema = new mongoose.Schema({
     product:{
         type: mongoose.Schema.Types.ObjectId,
@@ -9,6 +10,28 @@ const orderItemsSchema = new mongoose.Schema({
         type:Number,
         required:true
     }
+})
+
+// Addreas schema model
+const addreasSchema = new mongoose.Schema({
+    name:{
+        type: mongoose.Schema.Types.ObjectId,
+        ref:'User',
+        required:true
+    },
+    city:{
+        type:String,
+        required:true
+    },
+    area:{
+        type:String,
+        required: true,
+    },
+    house:{
+        type:String,
+        required: true,
+    }
+
 })
 
 
@@ -24,6 +47,9 @@ const orderSchema = new mongoose.Schema({
     },
     orderItems:{
          type: [orderItemsSchema]
+    },
+    addreas:{
+        type:[addreasSchema]
     }
 }, {timestamps:true})
 
