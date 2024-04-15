@@ -23,7 +23,7 @@ const doctorSchema = new mongoose.Schema({
             ref:"Hospital",
             default:0
         }
-    ]
+    ] 
 }, {timestamps:true})
         
 
